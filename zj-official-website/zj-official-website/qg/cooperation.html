@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>商务合作 — 中经企管 | 委托运营 · 合资共建 · 咨询服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经企管商务合作：委托运营、合资共建、咨询服务三种合作模式，合作流程清晰透明。期待与政府机构、园区业主、企业客户建立长期合作关系。" />
+    <meta name="keywords" content="商务合作,委托运营,合资共建,咨询服务,园区合作,中经企管,企业服务" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/qg/cooperation.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="商务合作 — 中经企管 | 委托运营 · 合资共建 · 咨询服务" />
+    <meta property="og:description" content="委托运营、合资共建、咨询服务三种合作模式，期待与您建立长期合作关系。" />
+    <meta property="og:url" content="https://www.zj-group.com/qg/cooperation.html" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        .qg-theme { --accent: #0b3d91; --accent-light: #e8f0fe; --gradient-start: #0b3d91; --gradient-end: #1a5ec4; --bg-soft: #f6f9fc; --card-shadow: 0 1px 3px rgba(0,0,0,0.06); --card-shadow-hover: 0 10px 32px rgba(0,0,0,0.10); }
+        .main { background: linear-gradient(180deg, #f4f7fb 0%, #fff 25%, #fff 75%, #f4f7fb 100%); padding-top: 0; padding-bottom: 20px; }
+        .page-hero { background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%); padding: 72px 0 56px; text-align: center; color: #fff; position: relative; overflow: hidden; }
+        .page-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 50%); pointer-events: none; }
+        .page-hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; position: relative; }
+        .page-hero .hero-sub { font-size: 16px; opacity: .82; font-weight: 400; position: relative; }
+        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; position: relative; z-index: 1; }
+        .section-card { background: #fff; border-radius: 12px; box-shadow: var(--card-shadow); padding: 40px 44px; margin-bottom: 28px; transition: box-shadow 0.3s ease; }
+        .section-card:hover { box-shadow: var(--card-shadow-hover); }
+        .sub-title { font-size: 22px; color: var(--accent); font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+        .sub-title .badge { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--accent-light); color: var(--accent); font-size: 16px; font-weight: 700; flex-shrink: 0; }
+        .intro-paragraph { text-align: justify; color: #555; line-height: 1.9; font-size: 15px; margin-bottom: 0; }
+        .mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .mode-card { background: var(--bg-soft); border: 1px solid transparent; border-radius: 10px; padding: 28px 22px; text-align: center; transition: all 0.3s ease; }
+        .mode-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: #dce5f2; background: #fff; }
+        .mode-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+        .mode-title { font-size: 17px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+        .mode-desc { color: #666; font-size: 14px; line-height: 1.6; margin: 0 0 10px; }
+        .mode-steps { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:12px; }
+        .mode-step-chip { background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 12px; font-weight:500; }
+        .flow-list { display: flex; flex-direction: column; gap: 12px; }
+        .flow-step { background: var(--bg-soft); border: 1px solid transparent; border-radius: 10px; padding: 20px 24px; transition: all 0.3s ease; display: flex; align-items: center; gap: 16px; }
+        .flow-step:hover { transform: translateX(6px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-color: #dce5f2; background: #fff; }
+        .flow-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+        .flow-text { color: #444; font-size: 15px; margin: 0; }
+        .contact-row { display: flex; flex-wrap: wrap; gap: 16px; }
+        .contact-chip { background: var(--bg-soft); border-radius: 10px; padding: 18px 24px; display: flex; align-items: center; gap: 12px; border: 1px solid #e2e8f2; flex: 1; min-width: 200px; }
+        .contact-chip .chip-icon { font-size: 24px; }
+        .contact-chip .chip-label { font-size: 13px; color: #888; }
+        .contact-chip .chip-value { font-size: 15px; font-weight: 600; color: #333; }
+        .footer { margin-top: 40px; }
+        @media (max-width: 640px) { .section-card { padding: 28px 20px; } .flow-step { flex-direction: column; align-items: flex-start; gap: 8px; } }
+    </style>
+</head>
+<body class="qg-theme">
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">中经企管</div>
+        <nav class="nav"><ul>
+            <li><a href="index.html">首页</a></li><li><a href="profile.html">企业简介</a></li>
+            <li><a href="service.html">管理服务</a></li><li><a href="dynamic.html">新闻动态</a></li>
+            <li><a href="cooperation.html">商务合作</a></li><li><a href="contact.html">联系我们</a></li>
+        </ul></nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="page-hero"><h1 id="qcTitle">商务合作</h1><p class="hero-sub">委托运营 · 合资共建 · 咨询服务 — 期待与您互利共赢</p></section>
+    <div class="page-container">
+        <div class="section-card"><p class="intro-paragraph">我们期待与政府机构、园区业主、企业客户建立长期稳定的合作关系，实现互利共赢。</p></div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">🤝</span> 合作模式</div>
+            <div class="mode-grid" id="qcModes"><!-- JS --></div>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📞</span> 合作联系</div>
+            <div class="contact-row">
+                <div class="contact-chip"><span class="chip-icon">📧</span><div><div class="chip-label">合作邮箱</div><div class="chip-value" id="qcEmail">info@zjqg.com</div></div></div>
+                <div class="contact-chip"><span class="chip-icon">📱</span><div><div class="chip-label">联系电话</div><div class="chip-value" id="qcPhone">010-XXXXXXX</div><div class="chip-label" style="margin-top:2px" id="qcHours">工作日 9:00 - 18:00</div></div></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">&copy; 2026 中经企业管理有限公司 版权所有<br/>
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+</footer>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+    function render(){
+        var D = SiteLoader.WebData, d = D.get('qg.cooperation'), c = D.get('qg.contact'), site = D.get('site');
+        if(!d) return;
+        document.getElementById('qcTitle').textContent = d.title || '商务合作';
+        document.title = (d.title||'商务合作') + ' — 中经企管';
+
+        var modes = d.modes || [];
+        var mH = '';
+        modes.forEach(function(m){
+            mH += '<div class="mode-card"><span class="mode-icon">'+m.icon+'</span><div class="mode-title">'+m.title+'</div><p class="mode-desc">'+m.desc+'</p>';
+            if(m.steps && m.steps.length){
+                mH += '<div class="mode-steps">';
+                m.steps.forEach(function(s){ mH += '<span class="mode-step-chip">'+s+'</span>'; });
+                mH += '</div>';
+            }
+            mH += '</div>';
+        });
+        document.getElementById('qcModes').innerHTML = mH || '<p style="color:#889">暂无数据</p>';
+
+        if(c){ document.getElementById('qcEmail').textContent = c.email || 'info@zjqg.com'; document.getElementById('qcPhone').textContent = c.phone || '-'; document.getElementById('qcHours').textContent = c.workingHours || ''; }
+    }
+})();
+</script>
+</body>
+</html>

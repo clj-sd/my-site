@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title data-path="site.name">中经集团 — 核技术医疗 · 企业综合服务</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="中经集团是国有资本控股的综合性产业集团，旗下拥有中经原子（BNCT精准医疗）和中经企管（企业综合服务），践行健康中国战略，助力高质量发展。" />
+  <meta name="keywords" content="中经集团,中经原子,中经企管,BNCT,硼中子俘获治疗,精准医疗,核技术医疗,园区运营,资产管理,管理咨询,国企,国资控股" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.zj-group.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="中经集团 — 核技术医疗 · 企业综合服务" />
+  <meta property="og:description" content="国有资本控股综合性产业集团，聚焦核技术医疗与企业综合服务两大核心赛道。" />
+  <meta property="og:url" content="https://www.zj-group.com/" />
+  <meta property="og:site_name" content="中经集团" />
+  <meta property="og:locale" content="zh_CN" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "中经集团",
+    "url": "https://www.zj-group.com/",
+    "description": "国有资本控股的综合性产业集团，聚焦核技术医疗与企业综合服务",
+    "subOrganization": [
+      { "@type": "Organization", "name": "中经原子科技有限公司", "url": "https://www.zj-group.com/atom/" },
+      { "@type": "Organization", "name": "中经企业管理有限公司", "url": "https://www.zj-group.com/qg/" }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<main class="portal-hero">
+  <div class="portal-content">
+    <div class="portal-badge" id="portalBadge">中经集团</div>
+    <h1 class="portal-title" id="heroTitle">科技赋能 · 服务赋能</h1>
+    <p class="portal-subtitle" id="heroSubtitle">
+      中经集团是国有资本控股的综合性产业集团，聚焦核技术医疗与企业综合服务两大核心赛道，践行健康中国战略，助力高质量发展。
+    </p>
+    <div class="business-cards" id="subsidiaryCards">
+      <!-- JS 动态填充 -->
+    </div>
+  </div>
+</main>
+
+<script src="js/data-loader.js" data-root="./"></script>
+<script src="js/site-loader.js"></script>
+<script>
+(function(){
+  if(!WebData.isReady()){ WebData.onReady(render); return; }
+  render();
+
+  function render(){
+    var L = SiteLoader, D = L.WebData;
+
+    L.fillTexts({
+      '#portalBadge': 'site.name',
+      '#heroTitle': 'portal.heroTitle',
+      '#heroSubtitle': 'portal.heroSubtitle'
+    });
+    document.title = D.get('site.name') + ' — 核技术医疗 · 企业综合服务';
+
+    var subs = D.get('portal.subsidiaries') || [];
+    var cardsHtml = '';
+    subs.forEach(function(s){
+      var highlightsHTML = (s.highlights||[]).map(function(h){ return '<li>'+h+'</li>'; }).join('');
+      cardsHtml += '<article class="business-card '+(s.id==='atom'?'card-atom':'card-qg')+'">'+
+        '<span class="card-tag">'+s.emoji+' '+(s.id==='atom'?'BNCT 医疗':'企业服务')+'</span>'+
+        '<h3>'+s.name+'</h3><p>'+s.desc+'</p>'+
+        (highlightsHTML?'<ul style="font-size:13px;color:#667;margin:8px 0;padding-left:18px">'+highlightsHTML+'</ul>':'')+
+        '<a href="'+s.link+'" class="card-link">进入官网 →</a></article>';
+    });
+    document.getElementById('subsidiaryCards').innerHTML = cardsHtml || '<p style="text-align:center;color:#889">暂无子品牌数据</p>';
+  }
+})();
+</script>
+</body>
+</html>
