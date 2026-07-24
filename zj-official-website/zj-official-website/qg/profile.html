@@ -10,22 +10,11 @@
     <link rel="stylesheet" href="../css/style.css" />
     <meta property="og:title" content="企业简介 — 中经企业管理有限公司" />
     <style>
-        .main { background: linear-gradient(180deg, #f4f7fb 0%, #fff 25%, #fff 75%, #f4f7fb 100%); padding-top: 0; }
-        .page-hero { background: linear-gradient(135deg, #0b3d91 0%, #1a5ec4 100%); padding: 72px 0 56px; text-align: center; color: #fff; overflow: hidden; }
-        .page-hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; margin-bottom: 14px; }
-        .page-hero .hero-sub { font-size: 16px; opacity: .82; }
-        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; }
-        .section-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 40px 44px; margin-bottom: 28px; }
-        .sub-title { font-size: 22px; color: #0b3d91; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-        .sub-title .badge { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #e8f0fe; color: #0b3d91; font-size: 16px; font-weight: 700; }
-        .intro-paragraph { text-align: justify; color: #555; line-height: 1.9; font-size: 15px; }
-        .timeline { display: flex; flex-direction: column; padding-left: 32px; border-left: 2px solid #dce5f2; margin-left: 10px; }
+        .timeline { display: flex; flex-direction: column; padding-left: 32px; border-left: 2px solid var(--gray-200); margin-left: 10px; }
         .timeline-item { position: relative; padding: 16px 0 16px 24px; }
-        .timeline-item::before { content: ""; position: absolute; left: -38px; top: 22px; width: 12px; height: 12px; background: #0b3d91; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #0b3d91; }
-        .timeline-year { font-weight: 700; color: #0b3d91; font-size: 16px; margin-bottom: 4px; }
-        .timeline-desc { color: #555; font-size: 14px; line-height: 1.6; }
-        .culture-row { display: flex; gap: 16px; flex-wrap: wrap; }
-        .culture-tag { background: #f6f9fc; border: 1px solid #e2e8f2; border-radius: 8px; padding: 10px 20px; font-weight: 600; color: #333; font-size: 14px; }
+        .timeline-item::before { content: ""; position: absolute; left: -38px; top: 22px; width: 12px; height: 12px; background: var(--qg-primary); border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--qg-primary); }
+        .timeline-year { font-weight: 700; color: var(--qg-primary); font-size: 16px; margin-bottom: 4px; }
+        .timeline-desc { color: var(--gray-600); font-size: 14px; line-height: 1.6; }
     </style>
 </head>
 <body class="qg-theme">
@@ -59,10 +48,10 @@
         <div class="section-card">
             <div class="sub-title"><span class="badge">🛡️</span> 资质证明</div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
-                <div style="background:#f6f9fc;border-radius:10px;padding:28px 20px;text-align:center;border:1px dashed #cfdde8">
+                <div class="cert-card">
                     <p style="font-weight:600">📄 营业执照</p><p style="font-size:12px;color:#999">待上传</p>
                 </div>
-                <div style="background:#f6f9fc;border-radius:10px;padding:28px 20px;text-align:center;border:1px dashed #cfdde8">
+                <div class="cert-card">
                     <p style="font-weight:600">🛡️ 企业服务资质证书</p><p style="font-size:12px;color:#999">待上传</p>
                 </div>
             </div>

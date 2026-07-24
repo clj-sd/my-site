@@ -13,89 +13,6 @@
     <meta property="og:description" content="国有资本控股BNCT精准医疗高新技术企业，院士领衔，推动核技术医疗国产化。" />
     <meta property="og:url" content="https://www.zj-group.com/atom/about.html" />
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-        .page-container { max-width: 800px; margin: 0 auto; text-align: center; }
-        .sub-title { font-size: 20px; color: #0b3d91; margin: 40px 0 20px; font-weight: 600; text-align: center; }
-        .intro-paragraph { text-align: justify; margin-bottom: 20px; color: #555; line-height: 1.9; }
-        .tag-group { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 32px; justify-content: center; }
-        .tag { padding: 6px 16px; background: #f0f4fa; color: #0b3d91; font-size: 13px; border-radius: 20px; border: 1px solid #e1e7f3; }
-        .card-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 20px; }
-        .card { text-align: center; cursor: pointer; position: relative; }
-        .card.clickable { cursor: pointer; }
-        .card.clickable::after {
-            content: '点击查看详情 →';
-            display: block;
-            font-size: 12px;
-            color: #0b3d91;
-            margin-top: 10px;
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
-        .card.clickable:hover::after { opacity: 1; }
-        .expert-title { color: #666; font-size: 14px; margin-bottom: 8px; }
-        .highlight { color: #0b3d91; font-weight: 500; }
-        .timeline { position: relative; padding: 20px 0; }
-        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; text-align: left; align-items: flex-start; }
-        .timeline-year { font-size: 16px; font-weight: 700; color: #0b3d91; background: #e8f0fe; padding: 4px 14px; border-radius: 20px; white-space: nowrap; min-width: 70px; text-align: center; }
-        .timeline-event { color: #555; line-height: 1.7; padding-top: 3px; }
-
-        /* Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed; inset: 0; z-index: 9999;
-            background: rgba(0,0,0,0.55);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            align-items: center; justify-content: center;
-        }
-        .modal-overlay.open { display: flex; }
-        .modal-dialog {
-            background: #fff; border-radius: 20px;
-            max-width: 560px; width: 90%; max-height: 80vh;
-            overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-            animation: modalIn 0.3s ease;
-            position: relative;
-        }
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .modal-header {
-            background: linear-gradient(135deg, #0b3d91, #1a5cc8);
-            color: #fff; padding: 32px 32px 24px;
-            border-radius: 20px 20px 0 0;
-            text-align: center;
-        }
-        .modal-header h3 {
-            font-size: 22px; font-weight: 700; margin: 0 0 4px;
-        }
-        .modal-header .modal-role {
-            font-size: 14px; opacity: 0.85; font-weight: 500;
-        }
-        .modal-close {
-            position: absolute; top: 16px; right: 20px;
-            background: rgba(255,255,255,0.2); color: #fff;
-            border: none; width: 36px; height: 36px; border-radius: 50%;
-            font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: background 0.2s;
-            line-height: 1;
-        }
-        .modal-close:hover { background: rgba(255,255,255,0.35); }
-        .modal-body { padding: 28px 32px 36px; }
-        .modal-body p {
-            color: #444; line-height: 1.9; font-size: 15px;
-            text-align: justify;
-        }
-        .modal-body .info-row {
-            display: flex; gap: 16px; margin-top: 24px;
-            flex-wrap: wrap;
-        }
-        .modal-body .info-chip {
-            background: #f0f4fa; color: #0b3d91;
-            padding: 6px 14px; border-radius: 20px;
-            font-size: 13px; font-weight: 500;
-        }
-    </style>
 </head>
 <body class="atom-theme">
 
@@ -110,21 +27,31 @@
 </header>
 
 <main class="main">
-    <section class="section">
-        <div class="page-container">
-            <h1 id="ahTitle">关于我们</h1>
-            <div class="sub-title">◎ 企业概况</div>
+    <section class="page-hero">
+        <h1 id="ahTitle">关于我们</h1>
+        <p class="hero-sub">院士领衔 · 国有资本控股 · BNCT精准医疗高新技术企业</p>
+    </section>
+
+    <div class="page-container">
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">🏢</span> 企业概况</div>
             <p class="intro-paragraph" id="ahIntro"></p>
             <div class="tag-group">
                 <span class="tag">国资控股</span><span class="tag">高新技术企业</span>
                 <span class="tag">BNCT专项资质</span><span class="tag">产学研一体化</span>
             </div>
-            <div class="sub-title">◎ 专家团队</div>
+        </div>
+
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">👨‍🔬</span> 专家团队</div>
             <div class="card-list" id="ahTeam"><!-- JS填充 --></div>
-            <div class="sub-title">◎ 发展历程</div>
+        </div>
+
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📅</span> 发展历程</div>
             <div class="timeline" id="ahTimeline"><!-- JS填充 --></div>
         </div>
-    </section>
+    </div>
 </main>
 
 <!-- 专家详情弹窗 -->

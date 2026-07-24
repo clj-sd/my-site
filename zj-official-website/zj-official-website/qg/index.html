@@ -28,6 +28,58 @@
   <a href="dynamic.html">新闻动态</a><a href="cooperation.html">商务合作</a><a href="contact.html">联系我们</a>
 </div>
 
+<!-- ===== 轮播图 ===== -->
+<section class="carousel" aria-roledescription="carousel" aria-label="中经企管业务轮播">
+  <div class="carousel-track">
+
+    <!-- Slide 1 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第1张：园区运营">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #0a1a1a 0%, #0f2f2a 40%, #1a5c4a 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">园区运营</span>
+        <h2 class="slide-title">智慧园区 · 专业运营</h2>
+        <p class="slide-desc">覆盖园区全生命周期的运营管理方案，助力产业集聚与高效发展</p>
+        <a href="service.html" class="slide-cta">了解园区运营 →</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第2张：资产管理">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #1a1520 0%, #2a1a3a 40%, #4a2d5e 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">资产管理</span>
+        <h2 class="slide-title">国有资产 · 保值增值</h2>
+        <p class="slide-desc">专业化国有资产管理，盘活存量资产，实现资产效益最大化</p>
+        <a href="service.html" class="slide-cta">了解资产管理 →</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第3张：管理咨询">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #1a1a28 0%, #1e2a4a 40%, #0d4a7a 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">管理咨询</span>
+        <h2 class="slide-title">战略引领 · 管理赋能</h2>
+        <p class="slide-desc">战略规划 · 组织变革 · 人力资源 · 数字化转型，全方位提升企业竞争力</p>
+        <a href="service.html" class="slide-cta">了解管理咨询 →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-arrow carousel-arrow--prev" aria-label="上一张">&#10094;</button>
+  <button class="carousel-arrow carousel-arrow--next" aria-label="下一张">&#10095;</button>
+
+  <div class="carousel-dots" role="tablist" aria-label="轮播导航">
+    <button class="carousel-dot active" role="tab" aria-label="第1张" aria-selected="true"></button>
+    <button class="carousel-dot" role="tab" aria-label="第2张" aria-selected="false"></button>
+    <button class="carousel-dot" role="tab" aria-label="第3张" aria-selected="false"></button>
+  </div>
+</section>
+
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -87,6 +139,7 @@
 <script src="../js/data-loader.js" data-root="../"></script>
 <script src="../js/site-loader.js"></script>
 <script src="../js/site-base.js"></script>
+<script src="../js/carousel.js"></script>
 <script>
 (function(){
   if(!WebData.isReady()){ WebData.onReady(render); return; }

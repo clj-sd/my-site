@@ -14,93 +14,7 @@
     <meta property="og:url" content="https://www.zj-group.com/qg/contact.html" />
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-        .qg-theme {
-            --accent: #0b3d91;
-            --accent-light: #e8f0fe;
-            --gradient-start: #0b3d91;
-            --gradient-end: #1a5ec4;
-            --bg-soft: #f6f9fc;
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.06);
-            --card-shadow-hover: 0 10px 32px rgba(0,0,0,0.10);
-        }
-        .main {
-            background: linear-gradient(180deg, #f4f7fb 0%, #fff 25%, #fff 75%, #f4f7fb 100%);
-            padding-top: 0; padding-bottom: 20px;
-        }
-        .page-hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 72px 0 56px; text-align: center; color: #fff;
-            position: relative; overflow: hidden;
-        }
-        .page-hero::before {
-            content: ""; position: absolute; inset: 0;
-            background: radial-gradient(circle at 40% 60%, rgba(255,255,255,0.06) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .page-hero h1 {
-            font-size: clamp(28px, 5vw, 42px); font-weight: 700;
-            letter-spacing: 1px; margin-bottom: 14px; position: relative;
-        }
-        .page-hero .hero-sub { font-size: 16px; opacity: .82; font-weight: 400; position: relative; }
-        .page-container {
-            max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px;
-            position: relative; z-index: 1;
-        }
-        .section-card {
-            background: #fff; border-radius: 12px; box-shadow: var(--card-shadow);
-            padding: 40px 44px; margin-bottom: 28px; transition: box-shadow 0.3s ease;
-        }
-        .section-card:hover { box-shadow: var(--card-shadow-hover); }
-        .sub-title {
-            font-size: 22px; color: var(--accent); font-weight: 700;
-            margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
-        }
-        .sub-title .badge {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 34px; height: 34px; border-radius: 10px;
-            background: var(--accent-light); color: var(--accent);
-            font-size: 16px; font-weight: 700; flex-shrink: 0;
-        }
-
-        .address-card {
-            background: var(--bg-soft); border-radius: 10px;
-            padding: 32px; text-align: center; border: 1px solid #e2e8f2;
-            transition: all 0.3s;
-        }
-        .address-card:hover {
-            background: #fff; border-color: #dce5f2;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        }
-        .address-icon { font-size: 40px; margin-bottom: 10px; display: block; }
-        .address-text { font-size: 17px; font-weight: 600; color: #333; line-height: 1.7; }
-
-        .info-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;
-        }
-        .info-chip {
-            background: var(--bg-soft); border: 1px solid #e2e8f2;
-            border-radius: 10px; padding: 22px 18px; text-align: center;
-            transition: all 0.3s;
-        }
-        .info-chip:hover {
-            background: #fff; border-color: #dce5f2;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        }
-        .info-chip .chip-icon { font-size: 28px; margin-bottom: 8px; display: block; }
-        .info-chip .chip-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-        .info-chip .chip-value { font-size: 15px; font-weight: 600; color: #333; }
-
-        .notice-box {
-            background: var(--bg-soft); border: 2px dashed #cbd5e1;
-            border-radius: 10px; padding: 28px; text-align: center;
-            color: #888; font-size: 15px; transition: border-color 0.3s;
-        }
-        .notice-box:hover { border-color: var(--accent); }
-
-        .footer { margin-top: 40px; }
-        @media (max-width: 640px) {
-            .section-card { padding: 28px 20px; }
-        }
+        @media (max-width: 640px) { .section-card { padding: 28px 20px; } }
     </style>
 </head>
 <body class="qg-theme">
@@ -122,14 +36,12 @@
 </header>
 
 <main class="main">
-
     <section class="page-hero">
         <h1>联系我们</h1>
         <p class="hero-sub">期待与您的每一次沟通</p>
     </section>
 
     <div class="page-container">
-
         <div class="section-card">
             <div class="sub-title"><span class="badge">📍</span> 总部地址</div>
             <div class="address-card">
@@ -165,7 +77,6 @@
                 如需咨询，请通过上述邮箱或电话联系我们，在线留言功能即将上线。
             </div>
         </div>
-
     </div>
 </main>
 

@@ -31,7 +31,7 @@
 </head>
 <body>
 
-<main class="portal-hero">
+<main class="portal-hero" id="portal">
   <div class="portal-content">
     <div class="portal-badge" id="portalBadge">中经集团</div>
     <h1 class="portal-title" id="heroTitle">科技赋能 · 服务赋能</h1>
@@ -65,10 +65,10 @@
     var cardsHtml = '';
     subs.forEach(function(s){
       var highlightsHTML = (s.highlights||[]).map(function(h){ return '<li>'+h+'</li>'; }).join('');
-      cardsHtml += '<article class="business-card '+(s.id==='atom'?'card-atom':'card-qg')+'">'+
+      cardsHtml += '<article class="business-card '+(s.id==='atom'?'card-atom':'card-qg')+'" style="list-style:none">'+
         '<span class="card-tag">'+s.emoji+' '+(s.id==='atom'?'BNCT 医疗':'企业服务')+'</span>'+
         '<h3>'+s.name+'</h3><p>'+s.desc+'</p>'+
-        (highlightsHTML?'<ul style="font-size:13px;color:#667;margin:8px 0;padding-left:18px">'+highlightsHTML+'</ul>':'')+
+        (highlightsHTML?'<ul style="font-size:13px;color:rgba(255,255,255,0.55);margin:8px 0;padding-left:18px">'+highlightsHTML+'</ul>':'')+
         '<a href="'+s.link+'" class="card-link">进入官网 →</a></article>';
     });
     document.getElementById('subsidiaryCards').innerHTML = cardsHtml || '<p style="text-align:center;color:#889">暂无子品牌数据</p>';
