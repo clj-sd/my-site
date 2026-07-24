@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>联系我们 — 中经企业管理有限公司 | 总部地址 · 联系方式</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经企业管理有限公司联系方式：总部地址、电话、传真、邮箱。如需咨询园区运营、资产管理、管理咨询等服务，欢迎联系我们。" />
+    <meta name="keywords" content="中经企管,联系我们,联系方式,总部地址,咨询,园区运营,资产管理" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/qg/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="联系我们 — 中经企业管理有限公司 | 总部地址 · 联系方式" />
+    <meta property="og:description" content="中经企业管理有限公司联系方式，欢迎咨询园区运营、资产管理、管理咨询等服务。" />
+    <meta property="og:url" content="https://www.zj-group.com/qg/contact.html" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        @media (max-width: 640px) { .section-card { padding: 28px 20px; } }
+    </style>
+</head>
+<body class="qg-theme">
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo" id="qcLogo">中经企管</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="profile.html">企业简介</a></li>
+                <li><a href="service.html">管理服务</a></li>
+                <li><a href="dynamic.html">新闻动态</a></li>
+                <li><a href="cooperation.html">商务合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="page-hero">
+        <h1>联系我们</h1>
+        <p class="hero-sub">期待与您的每一次沟通</p>
+    </section>
+
+    <div class="page-container">
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📍</span> 总部地址</div>
+            <div class="address-card">
+                <span class="address-icon">🏢</span>
+                <div class="address-text" id="qcAddress">北京市XX区XX路XX号中经大厦10层</div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📞</span> 联系方式</div>
+            <div class="info-grid" id="qcInfoGrid">
+                <div class="info-chip">
+                    <span class="chip-icon">📱</span>
+                    <div class="chip-label">总机</div>
+                    <div class="chip-value" id="qcPhone">010-XXXXXXX</div>
+                </div>
+                <div class="info-chip">
+                    <span class="chip-icon">🖨️</span>
+                    <div class="chip-label">传真</div>
+                    <div class="chip-value" id="qcFax">010-XXXXXXX</div>
+                </div>
+                <div class="info-chip">
+                    <span class="chip-icon">📧</span>
+                    <div class="chip-label">邮箱</div>
+                    <div class="chip-value" id="qcEmail">info@zjqg.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">💬</span> 留言咨询</div>
+            <div class="notice-box">
+                如需咨询，请通过上述邮箱或电话联系我们，在线留言功能即将上线。
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        &copy; 2026 中经企业管理有限公司 版权所有<br />
+        <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a>
+    </div>
+</footer>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+    function render(){
+        var D = SiteLoader.WebData, c = D.get('qg.contact'), s = D.get('site');
+        if(!c) return;
+        document.getElementById('qcAddress').textContent = c.address || '北京市XX区XX路XX号中经大厦10层';
+        document.getElementById('qcPhone').textContent = c.phone || '010-XXXXXXX';
+        document.getElementById('qcFax').textContent = c.fax || '010-XXXXXXX';
+        document.getElementById('qcEmail').textContent = c.email || 'info@zjqg.com';
+    }
+})();
+</script>
+</body>
+</html>

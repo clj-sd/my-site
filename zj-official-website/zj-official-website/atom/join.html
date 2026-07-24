@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>人才招聘 — 中经原子 | BNCT核技术医疗人才</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经原子人才招聘：BNCT精准医疗领域，院士领衔，前沿科研平台，期待您的加入。" />
+    <meta name="keywords" content="中经原子,人才招聘,BNCT,校园招聘,社会招聘,核技术医疗" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/atom/join.html" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta property="og:title" content="人才招聘 — 中经原子 | BNCT核技术医疗人才" />
+    <style>
+        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; }
+    </style>
+</head>
+<body class="atom-theme">
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">中经原子</div>
+        <nav class="nav"><ul>
+            <li><a href="index.html">首页</a></li><li><a href="about.html">关于我们</a></li>
+            <li><a href="business.html">核心业务</a></li><li><a href="news.html">项目动态</a></li><li><a href="join.html">人才招聘</a></li>
+        </ul></nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="page-hero">
+        <h1 id="ajTitle">人才招聘</h1>
+        <p class="hero-sub">加入前沿科研平台，共创BNCT精准医疗未来</p>
+    </section>
+    <div class="page-container">
+        <div class="section-card">
+            <p class="intro-paragraph" id="ajIntro"></p>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">社</span> 社会招聘</div>
+            <div class="job-grid" id="ajPositions"></div>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">校</span> 校园招聘</div>
+            <div class="campus-notice">
+                <div class="campus-title">🎓 校园招聘公告</div>
+                <div class="job-desc" id="ajCampusNotice"></div>
+            </div>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">投</span> 简历投递</div>
+            <div class="email-box">
+                <div class="email-label">请将简历发送至以下邮箱</div>
+                <div class="email-address" id="ajEmail">hr@zjatom.com</div>
+                <div class="email-note">邮件主题请注明："应聘岗位-姓名-专业-学历"，我们将在收到简历后一周内与合适人选联系。</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">&copy; 2026 中经原子科技有限公司 版权所有<br/>
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+</footer>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+
+    function render(){
+        var D = SiteLoader.WebData, d = D.get('atom.join');
+        if(!d) return;
+        document.getElementById('ajTitle').textContent = d.title || '人才招聘';
+        document.title = (d.title||'人才招聘') + ' — 中经原子 | BNCT核技术医疗人才';
+        document.getElementById('ajIntro').textContent = d.intro || '';
+        document.getElementById('ajCampusNotice').textContent = d.campusNotice || '';
+        var positions = d.positions || [];
+        var pH = '';
+        positions.forEach(function(p){
+            pH += '<div class="job-card"><div class="job-header"><span class="job-title">'+p.title+'</span><span class="job-tag">'+p.type+'</span></div>';
+            pH += '<div class="job-meta">📍 '+p.location+' · 🏷 '+p.dept+'</div>';
+            pH += '<div class="job-desc">'+p.desc+'</div></div>';
+        });
+        document.getElementById('ajPositions').innerHTML = pH || '<p style="color:#889;text-align:center;width:100%">暂无职位</p>';
+        var site = D.get('site');
+        if(site && site.contactEmail) document.getElementById('ajEmail').textContent = site.contactEmail;
+    }
+})();
+</script>
+</body>
+</html>

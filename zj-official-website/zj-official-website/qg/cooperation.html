@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>商务合作 — 中经企管 | 委托运营 · 合资共建 · 咨询服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经企管商务合作：委托运营、合资共建、咨询服务三种合作模式，合作流程清晰透明。期待与政府机构、园区业主、企业客户建立长期合作关系。" />
+    <meta name="keywords" content="商务合作,委托运营,合资共建,咨询服务,园区合作,中经企管,企业服务" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/qg/cooperation.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="商务合作 — 中经企管 | 委托运营 · 合资共建 · 咨询服务" />
+    <meta property="og:description" content="委托运营、合资共建、咨询服务三种合作模式，期待与您建立长期合作关系。" />
+    <meta property="og:url" content="https://www.zj-group.com/qg/cooperation.html" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; position: relative; z-index: 1; }
+        @media (max-width: 640px) { .section-card { padding: 28px 20px; } .flow-step { flex-direction: column; align-items: flex-start; gap: 8px; } }
+    </style>
+</head>
+<body class="qg-theme">
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">中经企管</div>
+        <nav class="nav"><ul>
+            <li><a href="index.html">首页</a></li><li><a href="profile.html">企业简介</a></li>
+            <li><a href="service.html">管理服务</a></li><li><a href="dynamic.html">新闻动态</a></li>
+            <li><a href="cooperation.html">商务合作</a></li><li><a href="contact.html">联系我们</a></li>
+        </ul></nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="page-hero"><h1 id="qcTitle">商务合作</h1><p class="hero-sub">委托运营 · 合资共建 · 咨询服务 — 期待与您互利共赢</p></section>
+    <div class="page-container">
+        <div class="section-card"><p class="intro-paragraph">我们期待与政府机构、园区业主、企业客户建立长期稳定的合作关系，实现互利共赢。</p></div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">🤝</span> 合作模式</div>
+            <div class="mode-grid" id="qcModes"><!-- JS --></div>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📞</span> 合作联系</div>
+            <div class="contact-row">
+                <div class="contact-chip"><span class="chip-icon">📧</span><div><div class="chip-label">合作邮箱</div><div class="chip-value" id="qcEmail">info@zjqg.com</div></div></div>
+                <div class="contact-chip"><span class="chip-icon">📱</span><div><div class="chip-label">联系电话</div><div class="chip-value" id="qcPhone">010-XXXXXXX</div><div class="chip-label" style="margin-top:2px" id="qcHours">工作日 9:00 - 18:00</div></div></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">&copy; 2026 中经企业管理有限公司 版权所有<br/>
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+</footer>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+    function render(){
+        var D = SiteLoader.WebData, d = D.get('qg.cooperation'), c = D.get('qg.contact'), site = D.get('site');
+        if(!d) return;
+        document.getElementById('qcTitle').textContent = d.title || '商务合作';
+        document.title = (d.title||'商务合作') + ' — 中经企管';
+
+        var modes = d.modes || [];
+        var mH = '';
+        modes.forEach(function(m){
+            mH += '<div class="mode-card"><span class="mode-icon">'+m.icon+'</span><div class="mode-title">'+m.title+'</div><p class="mode-desc">'+m.desc+'</p>';
+            if(m.steps && m.steps.length){
+                mH += '<div class="mode-steps">';
+                m.steps.forEach(function(s){ mH += '<span class="mode-step-chip">'+s+'</span>'; });
+                mH += '</div>';
+            }
+            mH += '</div>';
+        });
+        document.getElementById('qcModes').innerHTML = mH || '<p style="color:#889">暂无数据</p>';
+
+        if(c){ document.getElementById('qcEmail').textContent = c.email || 'info@zjqg.com'; document.getElementById('qcPhone').textContent = c.phone || '-'; document.getElementById('qcHours').textContent = c.workingHours || ''; }
+    }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>项目动态 — 中经原子 | BNCT最新进展与行业资讯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经原子BNCT项目最新动态：政府立项进展、行业学术交流、产业园合作签约等。了解硼中子俘获治疗技术最新进展。" />
+    <meta name="keywords" content="中经原子,BNCT,项目动态,政府立项,行业资讯,产业园合作,硼中子俘获治疗" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/atom/news.html" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta property="og:title" content="项目动态 — 中经原子 | BNCT最新进展与行业资讯" />
+    <style>
+        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; }
+    </style>
+</head>
+<body class="atom-theme">
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">中经原子</div>
+        <nav class="nav"><ul>
+            <li><a href="index.html">首页</a></li><li><a href="about.html">关于我们</a></li>
+            <li><a href="business.html">核心业务</a></li><li><a href="news.html">项目动态</a></li><li><a href="join.html">人才招聘</a></li>
+        </ul></nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="page-hero">
+        <h1 id="anTitle">项目动态</h1>
+        <p class="hero-sub">追踪BNCT领域前沿进展与最新资讯</p>
+    </section>
+    <div class="page-container">
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📰</span> 最新资讯</div>
+            <div class="news-list" id="anNewsList"></div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">&copy; 2026 中经原子科技有限公司 版权所有<br/>
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+</footer>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+
+    function render(){
+        var D = SiteLoader.WebData, d = D.get('atom.news');
+        if(!d) return;
+        document.getElementById('anTitle').textContent = d.title || '项目动态';
+        document.title = (d.title||'项目动态') + ' — 中经原子 | BNCT最新进展与行业资讯';
+        var items = d.items || [];
+        var nH = '';
+        items.forEach(function(n){
+            nH += '<div class="news-card"><span class="news-date">'+n.date+'</span>';
+            nH += '<div><div class="news-title">'+n.title+'</div><div class="news-summary">'+n.summary+'</div></div></div>';
+        });
+        document.getElementById('anNewsList').innerHTML = nH || '<p style="color:#889;text-align:center">暂无新闻</p>';
+    }
+})();
+</script>
+</body>
+</html>
