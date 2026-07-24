@@ -12,7 +12,7 @@
   <meta property="og:title" content="中经原子科技有限公司 — 精准医疗 BNCT 创新实践" />
   <style>
     .hero-visual .visual-inner { font-size: 120px; opacity: 0.35; }
-    .stats-section { background: linear-gradient(135deg, #0052D9, #003DAE); color: #fff; }
+    .stats-section { background: var(--atom-gradient); color: #fff; }
     .stats-section .stat-number { color: #fff; }
     .stats-section .stat-label { color: rgba(255,255,255,0.7); }
   </style>
@@ -35,6 +35,58 @@
 <div class="mobile-nav" role="navigation" aria-label="移动端导航">
   <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="business.html">核心业务</a><a href="news.html">项目动态</a><a href="join.html">人才招聘</a>
 </div>
+
+<!-- ===== 轮播图 ===== -->
+<section class="carousel" aria-roledescription="carousel" aria-label="中经原子业务轮播">
+  <div class="carousel-track">
+
+    <!-- Slide 1 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第1张：BNCT精准治疗">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #001f3f 0%, #003366 40%, #0052D9 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">BNCT 技术</span>
+        <h2 class="slide-title">硼中子俘获治疗 · 精准打击肿瘤</h2>
+        <p class="slide-desc">院士领衔科研团队，非侵入式靶向治疗，开启精准抗癌新时代</p>
+        <a href="business.html" class="slide-cta">了解 BNCT 技术 →</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第2张：技术优势">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #0a1628 0%, #0d2b4a 40%, #0f4a7a 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">核心优势</span>
+        <h2 class="slide-title">精准 · 安全 · 高效</h2>
+        <p class="slide-desc">选择性杀伤肿瘤细胞，正常组织损伤极小，单次照射即可完成治疗</p>
+        <a href="business.html" class="slide-cta">查看技术优势 →</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="第3张：临床进展">
+      <div class="slide-bg" style="background-image:linear-gradient(135deg, #0a1a2e 0%, #0f2d5c 40%, #1a4a8a 100%);"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="slide-label">项目动态</span>
+        <h2 class="slide-title">推动 BNCT 技术国产化</h2>
+        <p class="slide-desc">从技术研发到临床应用，打造核技术精准医疗完整生态链</p>
+        <a href="news.html" class="slide-cta">查看最新进展 →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-arrow carousel-arrow--prev" aria-label="上一张">&#10094;</button>
+  <button class="carousel-arrow carousel-arrow--next" aria-label="下一张">&#10095;</button>
+
+  <div class="carousel-dots" role="tablist" aria-label="轮播导航">
+    <button class="carousel-dot active" role="tab" aria-label="第1张" aria-selected="true"></button>
+    <button class="carousel-dot" role="tab" aria-label="第2张" aria-selected="false"></button>
+    <button class="carousel-dot" role="tab" aria-label="第3张" aria-selected="false"></button>
+  </div>
+</section>
 
 <section class="hero">
   <div class="container">
@@ -92,29 +144,35 @@
 </footer>
 
 <button class="back-to-top" aria-label="返回顶部">↑</button>
-<script src="../admin/data.js"></script>
+<script src="../js/data-loader.js" data-root="../"></script>
 <script src="../js/site-loader.js"></script>
 <script src="../js/site-base.js"></script>
+<script src="../js/carousel.js"></script>
 <script>
 (function(){
-  var L = SiteLoader, D = L.WebData;
-  var h = D.get('atom.home');
-  if(!h) return;
-  document.getElementById('ahTitle').innerHTML = (h.heroTitle||'中经原子').replace(/\n/g,'<br/>');
-  document.getElementById('ahDesc').textContent = h.heroDesc||'';
-  document.getElementById('ahCta').textContent = h.heroCtaText||'了解更多';
-  document.title = (h.heroTitle||'中经原子') + ' — 精准医疗 BNCT 创新实践';
-  var advs = h.advantages || [], advHTML = '';
-  advs.forEach(function(a){ advHTML += '<div class="card"><div class="card-icon">'+a.icon+'</div><h3>'+a.title+'</h3><p>'+a.desc+'</p></div>'; });
-  document.getElementById('atomAdvantages').innerHTML = advHTML || '<p class="text-center" style="color:#889">暂无数据</p>';
-  var stats = h.stats || [], statHTML = '';
-  stats.forEach(function(s){ statHTML += '<div><div class="stat-number">'+s.value+'</div><div class="stat-label">'+s.label+'</div></div>'; });
-  document.getElementById('atomStats').innerHTML = statHTML;
-  var news = D.get('atom.news.items') || [], newsHTML = '';
-  news.slice(0,3).forEach(function(n){
-    newsHTML += '<div class="card"><h3>📢 '+n.title+'</h3><p>'+n.summary+'</p><p style="font-size:12px;color:var(--gray-400);margin-top:12px">'+n.date+'</p></div>';
-  });
-  document.getElementById('atomLatestNews').innerHTML = newsHTML || '<p class="text-center" style="color:#889">暂无新闻</p>';
+  if(!WebData.isReady()){ WebData.onReady(render); return; }
+  render();
+
+  function render(){
+    var L = SiteLoader, D = L.WebData;
+    var h = D.get('atom.home');
+    if(!h) return;
+    document.getElementById('ahTitle').innerHTML = (h.heroTitle||'中经原子').replace(/\n/g,'<br/>');
+    document.getElementById('ahDesc').textContent = h.heroDesc||'';
+    document.getElementById('ahCta').textContent = h.heroCtaText||'了解更多';
+    document.title = (h.heroTitle||'中经原子') + ' — 精准医疗 BNCT 创新实践';
+    var advs = h.advantages || [], advHTML = '';
+    advs.forEach(function(a){ advHTML += '<div class="card"><div class="card-icon">'+a.icon+'</div><h3>'+a.title+'</h3><p>'+a.desc+'</p></div>'; });
+    document.getElementById('atomAdvantages').innerHTML = advHTML || '<p class="text-center" style="color:#889">暂无数据</p>';
+    var stats = h.stats || [], statHTML = '';
+    stats.forEach(function(s){ statHTML += '<div><div class="stat-number">'+s.value+'</div><div class="stat-label">'+s.label+'</div></div>'; });
+    document.getElementById('atomStats').innerHTML = statHTML;
+    var news = D.get('atom.news.items') || [], newsHTML = '';
+    news.slice(0,3).forEach(function(n){
+      newsHTML += '<div class="card"><h3>📢 '+n.title+'</h3><p>'+n.summary+'</p><p style="font-size:12px;color:var(--gray-400);margin-top:12px">'+n.date+'</p></div>';
+    });
+    document.getElementById('atomLatestNews').innerHTML = newsHTML || '<p class="text-center" style="color:#889">暂无新闻</p>';
+  }
 })();
 </script>
 </body>
