@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>新闻动态 — 中经企管 | 企业新闻 · 行业动态</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="中经企管最新新闻动态，包含企业新闻与行业动态。了解园区运营、资产管理、管理咨询领域最新资讯。" />
+    <meta name="keywords" content="中经企管,新闻动态,企业新闻,行业动态,园区运营,资产管理,管理咨询,国企" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.zj-group.com/qg/dynamic.html" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F2B4C'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' font-weight='800' fill='%23C4A23C' font-family='serif'%3EQ%3C/text%3E%3C/svg%3E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="新闻动态 — 中经企管 | 企业新闻 · 行业动态" />
+    <meta property="og:description" content="中经企管最新新闻动态，了解园区运营、资产管理领域最新资讯。" />
+    <meta property="og:url" content="https://www.zj-group.com/qg/dynamic.html" />
+    <meta property="og:image" content="https://www.zj-group.com/images/og-qg.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; position: relative; z-index: 1; }
+    </style>
+</head>
+<body class="qg-theme">
+
+<header class="site-header" id="header">
+    <div class="container">
+        <a href="index.html" class="logo"><span class="logo-icon">Q</span>中经企管</a>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="index.html">首页</a><a href="profile.html">企业简介</a>
+            <a href="service.html">管理服务</a><a href="dynamic.html" class="active">新闻动态</a>
+            <a href="cooperation.html">商务合作</a><a href="contact.html">联系我们</a>
+        </nav>
+        <button class="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+</header>
+<div class="mobile-nav" role="navigation" aria-label="移动端导航">
+    <a href="index.html">首页</a><a href="profile.html">企业简介</a><a href="service.html">管理服务</a>
+    <a href="dynamic.html">新闻动态</a><a href="cooperation.html">商务合作</a><a href="contact.html">联系我们</a>
+</div>
+
+<main class="main">
+    <section class="page-hero"><h1 id="qdTitle">新闻动态</h1><p class="hero-sub">企业新闻与行业动态 — 掌握园区运营与资产管理前沿资讯</p></section>
+    <div class="page-container">
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📢</span> 企业新闻</div>
+            <div class="news-list" id="qdCompanyNews"></div>
+        </div>
+        <div class="section-card">
+            <div class="sub-title"><span class="badge">📰</span> 行业动态</div>
+            <div class="news-list" id="qdIndustryNews"></div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand"><h3>中经企管</h3><p>中经企业管理有限公司，致力于为政府和企业提供全周期运营解决方案。</p></div>
+            <div class="footer-col"><h4>快速导航</h4><a href="profile.html">企业简介</a><a href="service.html">管理服务</a><a href="dynamic.html">新闻动态</a><a href="cooperation.html">商务合作</a></div>
+            <div class="footer-col"><h4>联系方式</h4><a href="contact.html">联系我们</a><a href="../index.html">中经集团</a><a href="../atom/index.html">中经原子</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 中经企业管理有限公司 版权所有</span><a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+    </div>
+</footer>
+
+<button class="back-to-top" aria-label="返回顶部">↑</button>
+
+<script src="../js/data-loader.js" data-root="../"></script>
+<script src="../js/site-loader.js"></script>
+<script src="../js/site-base.js"></script>
+<script>
+(function(){
+    if(!WebData.isReady()){ WebData.onReady(render); return; }
+    render();
+    function render(){
+        var D = SiteLoader.WebData, d = D.get('qg.dynamic');
+        if(!d) return;
+        document.getElementById('qdTitle').textContent = d.title || '新闻动态';
+        document.title = (d.title||'新闻动态') + ' — 中经企管 | 企业新闻 · 行业动态';
+        var cn = d.companyNews || [], cnH = '';
+        cn.forEach(function(n){ cnH += '<div class="news-card"><span class="news-date">'+n.date+'</span><div><div class="news-title">'+n.title+'</div><div class="news-summary">'+n.summary+'</div></div></div>'; });
+        document.getElementById('qdCompanyNews').innerHTML = cnH || '<p style="color:#889;text-align:center">暂无数据</p>';
+        var inews = d.industryNews || [], inH = '';
+        inews.forEach(function(n){ inH += '<div class="news-card"><span class="news-date">'+n.date+'</span><div><div class="news-title">'+n.title+'</div><div class="news-summary">'+n.summary+'</div></div></div>'; });
+        document.getElementById('qdIndustryNews').innerHTML = inH || '<p style="color:#889;text-align:center">暂无数据</p>';
+    }
+})();
+</script>
+</body>
+</html>
