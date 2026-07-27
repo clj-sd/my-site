@@ -8,28 +8,33 @@
     <meta name="keywords" content="商务合作,委托运营,合资共建,咨询服务,园区合作,中经企管,企业服务" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.zj-group.com/qg/cooperation.html" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F2B4C'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' font-weight='800' fill='%23C4A23C' font-family='serif'%3EQ%3C/text%3E%3C/svg%3E" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="商务合作 — 中经企管 | 委托运营 · 合资共建 · 咨询服务" />
     <meta property="og:description" content="委托运营、合资共建、咨询服务三种合作模式，期待与您建立长期合作关系。" />
     <meta property="og:url" content="https://www.zj-group.com/qg/cooperation.html" />
+    <meta property="og:image" content="https://www.zj-group.com/images/og-qg.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-        .page-container { max-width: 860px; margin: -28px auto 0; padding: 0 20px 60px; position: relative; z-index: 1; }
-        @media (max-width: 640px) { .section-card { padding: 28px 20px; } .flow-step { flex-direction: column; align-items: flex-start; gap: 8px; } }
-    </style>
 </head>
 <body class="qg-theme">
 
-<header class="header">
-    <div class="header-inner">
-        <div class="logo">中经企管</div>
-        <nav class="nav"><ul>
-            <li><a href="index.html">首页</a></li><li><a href="profile.html">企业简介</a></li>
-            <li><a href="service.html">管理服务</a></li><li><a href="dynamic.html">新闻动态</a></li>
-            <li><a href="cooperation.html">商务合作</a></li><li><a href="contact.html">联系我们</a></li>
-        </ul></nav>
+<header class="site-header" id="header">
+    <div class="container">
+        <a href="index.html" class="logo"><span class="logo-icon">Q</span>中经企管</a>
+        <nav class="nav-links" aria-label="主导航">
+            <a href="index.html">首页</a><a href="profile.html">企业简介</a>
+            <a href="service.html">管理服务</a><a href="dynamic.html">新闻动态</a>
+            <a href="cooperation.html" class="active">商务合作</a><a href="contact.html">联系我们</a>
+        </nav>
+        <button class="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
     </div>
 </header>
+<div class="mobile-nav" role="navigation" aria-label="移动端导航">
+    <a href="index.html">首页</a><a href="profile.html">企业简介</a><a href="service.html">管理服务</a>
+    <a href="dynamic.html">新闻动态</a><a href="cooperation.html">商务合作</a><a href="contact.html">联系我们</a>
+</div>
 
 <main class="main">
     <section class="page-hero"><h1 id="qcTitle">商务合作</h1><p class="hero-sub">委托运营 · 合资共建 · 咨询服务 — 期待与您互利共赢</p></section>
@@ -49,10 +54,17 @@
     </div>
 </main>
 
-<footer class="footer">
-    <div class="container">&copy; 2026 中经企业管理有限公司 版权所有<br/>
-    <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand"><h3>中经企管</h3><p>中经企业管理有限公司，致力于为政府和企业提供全周期运营解决方案。</p></div>
+            <div class="footer-col"><h4>快速导航</h4><a href="profile.html">企业简介</a><a href="service.html">管理服务</a><a href="dynamic.html">新闻动态</a><a href="cooperation.html">商务合作</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 中经企业管理有限公司 版权所有</span><a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">京ICP备XXXXXXXX号</a></div>
+    </div>
 </footer>
+
+<button class="back-to-top" aria-label="返回顶部">↑</button>
 
 <script src="../js/data-loader.js" data-root="../"></script>
 <script src="../js/site-loader.js"></script>
@@ -62,11 +74,10 @@
     if(!WebData.isReady()){ WebData.onReady(render); return; }
     render();
     function render(){
-        var D = SiteLoader.WebData, d = D.get('qg.cooperation'), c = D.get('qg.contact'), site = D.get('site');
+        var D = SiteLoader.WebData, d = D.get('qg.cooperation'), c = D.get('qg.contact');
         if(!d) return;
         document.getElementById('qcTitle').textContent = d.title || '商务合作';
         document.title = (d.title||'商务合作') + ' — 中经企管';
-
         var modes = d.modes || [];
         var mH = '';
         modes.forEach(function(m){
@@ -79,8 +90,11 @@
             mH += '</div>';
         });
         document.getElementById('qcModes').innerHTML = mH || '<p style="color:#889">暂无数据</p>';
-
-        if(c){ document.getElementById('qcEmail').textContent = c.email || 'info@zjqg.com'; document.getElementById('qcPhone').textContent = c.phone || '-'; document.getElementById('qcHours').textContent = c.workingHours || ''; }
+        if(c){
+            document.getElementById('qcEmail').textContent = c.email || 'info@zjqg.com';
+            document.getElementById('qcPhone').textContent = c.phone || '-';
+            document.getElementById('qcHours').textContent = c.workingHours || '';
+        }
     }
 })();
 </script>
